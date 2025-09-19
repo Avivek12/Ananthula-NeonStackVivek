@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Serve React build (frontend)
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+// Serve React build (frontend inside backend/frontend/build)
+app.use(express.static(path.join(__dirname, "frontend/build")));
 
 // SQLite Database
 const db = new sqlite3.Database("./portfolio.db", (err) => {
@@ -55,7 +55,8 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "VivekListOfFeedback123";
 // Admin messages (password protected)
 app.post("/api/admin/messages", (req, res) => {
   const { password } = req.body;
-  if (password !== ADMIN_PASSWORD) return res.status(403).json({ error: "Unauthorized" });
+  if (password !== ADMIN_PASSWORD)
+    return res.status(403).json({ error: "Unauthorized" });
 
   db.all("SELECT * FROM messages ORDER BY created_at DESC", [], (err, rows) => {
     if (err) return res.status(500).json({ error: "DB error" });
@@ -66,7 +67,8 @@ app.post("/api/admin/messages", (req, res) => {
 // Save message from Contact form
 app.post("/api/messages", (req, res) => {
   const { fullName, email, message } = req.body;
-  if (!fullName || !email || !message) return res.status(400).json({ error: "All fields required" });
+  if (!fullName || !email || !message)
+    return res.status(400).json({ error: "All fields required" });
 
   db.run(
     "INSERT INTO messages (fullName, email, message) VALUES (?, ?, ?)",
@@ -108,9 +110,8 @@ app.post("/api/feedback/like", (req, res) => {
 
 // ------------------- Serve React frontend for all other routes -------------------
 app.get(/^\/.*$/, (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
 });
-
 
 // Start server
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
