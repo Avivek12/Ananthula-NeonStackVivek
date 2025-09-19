@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve React build (frontend)
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 // SQLite Database
 const db = new sqlite3.Database("./portfolio.db", (err) => {
@@ -20,7 +20,7 @@ const db = new sqlite3.Database("./portfolio.db", (err) => {
   else console.log("✅ SQLite connected");
 });
 
-// Create tables
+// Create tables if they don't exist
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS messages (
@@ -107,8 +107,8 @@ app.post("/api/feedback/like", (req, res) => {
 });
 
 // ------------------- Serve React frontend for all other routes -------------------
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
 });
 
 // Start server
