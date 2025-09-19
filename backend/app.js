@@ -107,9 +107,10 @@ app.post("/api/feedback/like", (req, res) => {
 });
 
 // ------------------- Serve React frontend for all other routes -------------------
-app.get("*", (req, res) => {
+app.get(/^\/.*$/, (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
 });
+
 
 // Start server
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
