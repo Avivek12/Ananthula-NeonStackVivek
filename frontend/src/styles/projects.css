@@ -1,15 +1,15 @@
-/* Projects Section */
+
 .projects-section {
   position: relative;
   text-align:center;
   padding: 120px 20px;
  background: linear-gradient(
   135deg,
-  #1a2a38,  /* slightly lighter than #0f2027 */
-  #2b3e50,  /* slightly lighter than #203a43 */
-  #3c5568,  /* lighter than #2c5364 */
-  #2f3d50,  /* smoother mid-dark tone */
-  #16232f   /* lighter dark shade instead of pitch black */
+  #1a2a38,
+  #2b3e50, 
+  #3c5568,
+  #2f3d50,
+  #16232f  
 );
 
   background-size: 400% 400%;
@@ -75,11 +75,11 @@
 .glass-card {
   background: linear-gradient(
     145deg, 
-    rgba(255, 255, 255, 0.08),  /* slightly brighter than before */
+    rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0.18)
   );
   border-radius: 20px;
-  backdrop-filter: blur(14px);   /* a little stronger blur for depth */
+  backdrop-filter: blur(14px); 
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   position: relative;
   overflow: hidden;
@@ -245,14 +245,14 @@
 }
 .section-navigation {
   display: flex;
-  justify-content: space-between; /* back-left, next-right */
-  align-items: center;            /* vertical alignment */
+  justify-content: space-between;
+  align-items: center;  
   margin-top: 40px;
-  max-width: 800px;               /* keep buttons in reasonable width */
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 15px;
-  gap: 20px;                      /* spacing between buttons */
+  gap: 20px;            
 }
 
 .nav-btn {
@@ -262,12 +262,12 @@
   border-radius: 50px;
   text-decoration: none;
   color: #fff;
-  display: inline-block;          /* important: content-based width */
+  display: inline-block;   
   background: linear-gradient(135deg, #42e695, #fdd819);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  white-space: nowrap;            /* prevent wrapping */
-  width: auto;                    /* ensures buttons don’t stretch */
+  white-space: nowrap;
+  width: auto;
   text-align: center;
 }
 
@@ -287,15 +287,15 @@
 /* Small devices (tablet/mobile) */
 @media (max-width: 768px) {
   .section-navigation {
-    flex-direction: column;      /* stack buttons */
-    align-items: stretch;        /* full width on mobile */
+    flex-direction: column;
+    align-items: stretch;    
     gap: 10px;
     margin-top: 30px;
     padding: 0 10px;
   }
 
   .nav-btn {
-    width: 100%;                 /* full width only on small screens */
+    width: 100%;              
     padding: 12px 0;
     font-size: 1rem;
   }
@@ -317,7 +317,7 @@
   position: absolute;
   border-radius: 50%;
   background: white;
-  box-shadow: 0 0 6px 2px white; /* brighter glow */
+  box-shadow: 0 0 6px 2px white;
   pointer-events: none;
 }
 
