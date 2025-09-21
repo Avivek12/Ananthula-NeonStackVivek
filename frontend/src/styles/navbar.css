@@ -56,10 +56,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
   background-size: 400% 400%;
 
   /* Gradient text clipping */
-  -webkit-background-clip: text; /* Safari, Chrome */
-  background-clip: text;         /* Standard for modern browsers */
-  -webkit-text-fill-color: transparent; /* Safari, Chrome */
-  color: transparent; /* fallback */
+  -webkit-background-clip: text; 
+  background-clip: text;        
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
 
   /* Animation */
   animation: brandPulse 6s ease-in-out infinite;
@@ -109,7 +109,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
   linear-gradient(90deg, rgba(0, 240, 255, 0.7), rgba(255, 204, 0, 0.7));
 background-blend-mode: overlay;
 backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px); /* Safari */
+-webkit-backdrop-filter: blur(12px); 
 
 
   color: #f0f0f0 !important;
