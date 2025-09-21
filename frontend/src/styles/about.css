@@ -1,4 +1,3 @@
-/* about.css - Polished for about.js component */
 
 /* ---------- Theme variables ---------- */
 :root {
@@ -509,12 +508,12 @@
   .edu-card, .experience-card { max-width: 900px; }
 }
 .education-org-name {
-  font-size: 1.2rem;          /* readable size */
-  font-weight: 600;           /* bold but not too heavy */
-  color: #4a90e2;             /* elegant blue tone */
-  margin: 0.3rem 0 0.6rem 0;  /* spacing */
-  text-align: center;         /* centered for neatness */
-  letter-spacing: 0.5px;      /* slight spacing */
+  font-size: 1.2rem;         
+  font-weight: 600;           
+  color: #4a90e2;         
+  margin: 0.3rem 0 0.6rem 0; 
+  text-align: center;      
+  letter-spacing: 0.5px;   
   position: relative;
   display: inline-block;
   padding: 4px 12px;
