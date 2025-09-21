@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "frontend", "build")));
 // SQLite Database
 const db = new sqlite3.Database("./portfolio.db", (err) => {
   if (err) console.error("DB error:", err);
-  else console.log("✅ SQLite connected");
+  else console.log("SQLite connected");
 });
 
 // Create tables if they don't exist
@@ -112,4 +112,4 @@ app.get(/^\/.*$/, (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
