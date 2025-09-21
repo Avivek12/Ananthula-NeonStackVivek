@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../styles/contact.css";
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaHeart } from "react-icons/fa";
 
-// Use environment variable for API URL; empty string for production (same domain)
 const API_URL = "https://ananthula-vivekkumar-portfolio.onrender.com";
 function Contact() {
   const [formData, setFormData] = useState({ fullName: "", email: "", message: "" });
